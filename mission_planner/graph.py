@@ -6,7 +6,7 @@ from PIL import Image
 SCALE = 8
 MAGIC_NUMBER = 100
 
-im = Image.open("assets/example1.png")
+im = Image.open('mission_planner/assets/example1.png')
 im = im.convert('L')
 image_pixels = np.asarray(im)
 
