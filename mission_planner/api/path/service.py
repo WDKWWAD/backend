@@ -13,6 +13,7 @@ path_ns = api.namespace('path')
 class Path(Resource):
 
     @staticmethod
+    @path_ns.marshal_with(serializers.mission_result)
     @api.expect(serializers.mission_parameters)
     def post():
         mission_parameters = request.json
@@ -20,8 +21,9 @@ class Path(Resource):
 
         graph = get_graph()
 
-        path = compute_path(graph, mission_points)
+        path, hypsometric_profile, distance = compute_path(graph, mission_points)
 
-        return path, 200
-
-
+        return {
+                   'path': path,
+                   'hypsometric_profile': hypsometric_profile,
+                   'total_distance': distance}, 200
