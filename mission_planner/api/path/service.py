@@ -27,3 +27,7 @@ class Path(Resource):
                    'path': path,
                    'hypsometric_profile': hypsometric_profile,
                    'total_distance': distance}, 200
+
+    @staticmethod
+    def get():
+        return 'hello', 200

@@ -1,9 +1,11 @@
 from flask import Flask, Blueprint
-from mission_planner.api import api
+from flask_cors import CORS
 
+from mission_planner.api import api
 from mission_planner.api.path.service import path_ns
 
 app = Flask(__name__)
+CORS(app)
 
 
 def initialize_app(flask_app):
