@@ -3,8 +3,8 @@ from flask_restplus import fields
 from mission_planner.api import api
 
 in__single_point = api.model('Representation of single input point', {
-    'x': fields.Integer(),
-    'y': fields.Integer(),
+    'x': fields.Float(),  # Will be downcasted to int
+    'y': fields.Float(),  # Will be downcasted to int
 })
 
 out__single_point = api.model('Representation of single output point', {

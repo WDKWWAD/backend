@@ -17,7 +17,7 @@ class Path(Resource):
     @api.expect(serializers.mission_parameters)
     def post():
         mission_parameters = request.json
-        mission_points = mission_parameters['points']
+        mission_points = [{'x': int(point['x']), 'y': int(point['y'])} for point in mission_parameters['points']]
 
         graph = get_graph()
 
