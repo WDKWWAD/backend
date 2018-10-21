@@ -2,12 +2,12 @@ from flask_restplus import fields
 
 from mission_planner.api import api
 
-in__single_point = api.model('Representation of single point', {
+in__single_point = api.model('Representation of single input point', {
     'x': fields.Integer(),
     'y': fields.Integer(),
 })
 
-out__single_point = api.model('Representation of single point', {
+out__single_point = api.model('Representation of single output point', {
     'x': fields.Integer(),
     'y': fields.Integer(),
     'z': fields.Integer(),
