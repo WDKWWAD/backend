@@ -7,7 +7,7 @@ SCALE = 8
 N = int(2048 / SCALE)
 SCALE_TO_METERS = 26.6666
 
-im = Image.open('mission_planner/assets/example1.png')
+im = Image.open('mission_planner/assets/map.png')
 im = im.convert('L')
 image_pixels = np.asarray(im)
 
