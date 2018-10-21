@@ -7,7 +7,6 @@ SCALE = 8
 
 def get_total_distance(path):
     total = 0
-    print(path)
     for i in range(len(path) - 1):
         total += get_distance_to_drive(path[i]['x'], path[i]['y'], path[i + 1]['x'], path[i + 1]['y'])
     return total
